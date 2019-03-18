@@ -30,7 +30,7 @@ def main():
     home_address.postal_code = "123 ABC"
     home_address.country = "Canada"
 
-    # Print home address information
+    # Print home address information-
     print_address(home_address)
 
     # Work Address
