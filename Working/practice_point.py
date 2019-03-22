@@ -26,7 +26,7 @@ def main():
     p1 = Point(1, 1)
     p2 = Point(4, 5)
 
-    print("The distance between the 2 points is", Point.get_distance(p1, p2))
+    print("The distance between the 2 points is", p1.get_distance(p2))
 
 
 main()
