@@ -59,7 +59,6 @@ def on_draw(delta_time):
     # of this as our speed and direction.)
     center_x += delta_x * delta_time
     center_y += delta_y * delta_time
-
     # Figure out if we hit the edge and need to reverse.
     if center_x < RECT_WIDTH // 2 \
             or center_x > SCREEN_WIDTH - RECT_WIDTH // 2:
@@ -91,7 +90,7 @@ def main():
     # Tell the computer to call the draw command at the specified interval.
     arcade.schedule(on_draw, 1 / 80)
 
-    # Run the program
+    # Run the progr
     arcade.run()
 
 
