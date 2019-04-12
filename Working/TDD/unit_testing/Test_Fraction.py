@@ -14,17 +14,17 @@ class TestFraction(unittest.TestCase):
         self.fraction3 = Fraction.Fraction(1, 4)
 
     def test_instance_creation(self):
-        self.assertIsInstance(Fraction.Fraction, self.fraction1)
+        self.assertIsInstance(self.fraction1, Fraction.Fraction)
 
     def test_instance_creation_0Denom(self):
-        self.assertRaises(ValueError, Fraction.Fraction(1.0))
+        self.assertRaises(ValueError, Fraction.Fraction, 1, 0)
 
     def test_get_numerator(self):
         self.assertEquals(self.fraction1.get_numerator(), 3)
 
     def test_get_denominator(self):
         # 3. create a test to check the denominator of the self.fraction1 object
-        self.assertEqual(4, Fraction.Fraction.get_denominator())
+        self.assertEqual(4, self.fraction1.get_denominator())
 
     def test_set_denominatorBasic(self):
         self.fraction1.set_denominator(8)
@@ -32,7 +32,7 @@ class TestFraction(unittest.TestCase):
 
     def test_set_denominator0(self):
         # 4. test that setting the denominator of self.fraction1 raises a ValueError
-        pass
+        self.assertRaises(ValueError, self.fraction1.set_denominator(0))
 
     def test_str(self):
         self.assertEquals(self.fraction1.__str__(), "3/4")
@@ -47,7 +47,8 @@ class TestFraction(unittest.TestCase):
 
     def test_subtract(self):
         # 5. test self.fraction1 - self.fraction2
-        pass
+        self.fraction1.subtract(self.fraction2)
+        self.assertEqual(self.fraction1.__str__(), "1/12")
 
     def test_subtract_reduce(self):
         self.fraction1.subtract(self.fraction3)
@@ -55,7 +56,8 @@ class TestFraction(unittest.TestCase):
 
     def test_multiply(self):
         # 6. test the multiply method, checking fraction1 * fraction2
-        pass
+        self.fraction1.multiply(self.fraction2)
+        self.assertEqual(self.fraction1.__str__(), "1/2")
 
 
 if __name__ == '__main__':
